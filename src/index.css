@@ -23,6 +23,8 @@
 
   /* Accent — indigo */
   --accent:    #7b7df0;
+  --accent2:   #b07ef0;
+  --gold:      #e0b84a;
   --accent-bg: rgba(123, 125, 240, 0.08);
 
   /* Semantic */

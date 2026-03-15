@@ -280,9 +280,9 @@ export default function BookDetail({ book, onBack }) {
             ))}
           </CollapsibleSection>
 
-          <CollapsibleSection title="Manual Annotations (0–3)" defaultOpen={false}>
+          <CollapsibleSection title="Annotations" defaultOpen={false}>
             {MANUAL_SCORES.map(({ key, label }) => (
-              <ScoreRow key={key} label={label} value={book[key]} max={3} color="var(--accent2)" />
+              <ScoreRow key={key} label={label} value={book[key]} max={100} color="var(--accent2)" />
             ))}
           </CollapsibleSection>
 
