@@ -1,72 +1,72 @@
 {
   "book_id": "Titus",
-  "final_innovation_index": 53.4,
+  "final_innovation_index": 54.4486470603104,
   "profile_label": "institutional_innovation",
-  "capture_pressure": 76.75,
-  "resistance_residue": 10.75,
+  "capture_pressure": 78.0,
+  "resistance_residue": 8.25,
   "dominant_contradiction": "hierarchy_building (92) vs kingdom_nonhierarchy (5)",
   "radar_axes": [
     {
       "axis": "keeper_obligation",
       "value_raw": 18.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.54,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "kingdom_nonhierarchy",
       "value_raw": 5.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.15,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "hierarchy_building",
       "value_raw": 92.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 2.76,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "domination_accommodation",
-      "value_raw": 75.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_raw": 78.0,
+      "value_normalized": 2.34,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "israel_continuity",
-      "value_raw": 15.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_raw": 5.0,
+      "value_normalized": 0.15,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "christological_recomposition",
       "value_raw": 48.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 1.44,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "orthodoxy_production",
       "value_raw": 72.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 2.16,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "eschatological_deferral",
-      "value_raw": 68.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_raw": 70.0,
+      "value_normalized": 2.1,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "creation_ground",
       "value_raw": 5.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.15,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
@@ -92,8 +92,8 @@
     }
   ],
   "meta": {
-    "manual_axes_scale": "0–3 (0 = absent/scored-zero, 3 = dominant)",
-    "computed_axes_normalized": "raw 0–100 rescaled to 0–3 for display",
+    "manual_axes_scale": "0\u20133 (0 = absent/scored-zero, 3 = dominant)",
+    "computed_axes_normalized": "raw 0\u2013100 rescaled to 0\u20133 for display",
     "data_sources": "data/raw/concept_scores.csv (manual); pipeline aggregates (computed)"
   }
 }

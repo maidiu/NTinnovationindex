@@ -22,7 +22,7 @@ export default function App() {
   return (
     <>
       <nav>
-        <span className="nav-logo"><span />NT Innovation Index</span>
+        <span className="nav-logo"><span />NT Continuity Index</span>
         <button
           className={page === 'dashboard' || page === 'detail' ? 'active' : ''}
           onClick={() => { setPage('dashboard'); setSelectedBook(null) }}

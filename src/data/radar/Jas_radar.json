@@ -1,72 +1,72 @@
 {
   "book_id": "Jas",
-  "final_innovation_index": 28.41,
+  "final_innovation_index": 28.405932732032557,
   "profile_label": "lxx_anchored",
   "capture_pressure": 6.5,
-  "resistance_residue": 84.75,
+  "resistance_residue": 85.75,
   "dominant_contradiction": "keeper_obligation (98) vs hierarchy_building (5)",
   "radar_axes": [
     {
       "axis": "keeper_obligation",
       "value_raw": 98.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 2.94,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "kingdom_nonhierarchy",
       "value_raw": 78.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 2.34,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "hierarchy_building",
       "value_raw": 5.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.15,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "domination_accommodation",
       "value_raw": 8.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.24,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "israel_continuity",
       "value_raw": 95.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 2.85,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "christological_recomposition",
       "value_raw": 5.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.15,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "orthodoxy_production",
       "value_raw": 5.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.15,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "eschatological_deferral",
       "value_raw": 8.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_normalized": 0.24,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
       "axis": "creation_ground",
-      "value_raw": 68.0,
-      "value_normalized": 3.0,
-      "raw_scale": 3.0,
+      "value_raw": 72.0,
+      "value_normalized": 2.16,
+      "raw_scale": 100.0,
       "layer": "manual"
     },
     {
@@ -92,8 +92,8 @@
     }
   ],
   "meta": {
-    "manual_axes_scale": "0–3 (0 = absent/scored-zero, 3 = dominant)",
-    "computed_axes_normalized": "raw 0–100 rescaled to 0–3 for display",
+    "manual_axes_scale": "0\u20133 (0 = absent/scored-zero, 3 = dominant)",
+    "computed_axes_normalized": "raw 0\u2013100 rescaled to 0\u20133 for display",
     "data_sources": "data/raw/concept_scores.csv (manual); pipeline aggregates (computed)"
   }
 }

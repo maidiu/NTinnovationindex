@@ -4,12 +4,12 @@ import ScatterPlot from './ScatterPlot.jsx'
 import { bookName } from '../bookNames.js'
 
 const PROFILE_LABELS = [
-  { key: 'lxx_anchored',            desc: 'Score < 30. Vocabulary and conceptual framework remain tightly bound to LXX patterns. Minimal departure from the Septuagintal tradition.' },
-  { key: 'constrained_departure',   desc: 'Score 30–38. Selective divergence from LXX norms with significant continuity. Innovation is present but bounded by received tradition.' },
-  { key: 'selective_recomposition', desc: 'Score 38–44. Deliberate reworking of inherited categories in specific domains while preserving others. Partial semantic reorientation.' },
-  { key: 'composite_recomposition', desc: 'Score 44–50. Substantial semantic shift across multiple domains. The text works in creative tension with its tradition.' },
-  { key: 'institutional_innovation',desc: 'Score 50–57. High innovation with institutional direction. The text is actively constructing new normative frameworks.' },
-  { key: 'systemic_recomposition',  desc: 'Score > 57. Thoroughgoing semantic and conceptual departure. The text constitutes a new semiotic universe relative to its source tradition.' },
+  { key: 'lxx_anchored',            desc: 'Continuity > 70. Vocabulary and conceptual framework remain tightly bound to LXX patterns. Maximal preservation of the Septuagintal tradition.' },
+  { key: 'constrained_departure',   desc: 'Continuity 62–70. Selective divergence from LXX norms, but the inherited tradition remains the dominant frame throughout.' },
+  { key: 'selective_recomposition', desc: 'Continuity 56–62. Deliberate reworking of inherited categories in specific domains while preserving others. The tradition is still the primary reference.' },
+  { key: 'composite_recomposition', desc: 'Continuity 50–56. Substantial semantic shift across multiple domains. The text works in creative tension with — and at some cost to — its tradition.' },
+  { key: 'institutional_innovation',desc: 'Continuity 43–50. The text is actively constructing new normative frameworks that displace inherited covenant obligations.' },
+  { key: 'systemic_recomposition',  desc: 'Continuity < 43. Thoroughgoing departure. The inherited tradition has been substantially abandoned and replaced by a new institutional-theological universe.' },
 ]
 
 const MODES = [
@@ -17,18 +17,18 @@ const MODES = [
   { key: 'resistance_preservation',  desc: 'High covenantal integrity, low consolidation. The text actively maintains the founding movement\'s social vision against normative accommodation.' },
   { key: 'contested_recomposition',  desc: 'Both consolidation and covenantal integrity are elevated. The text holds both impulses simultaneously — a genuine site of unresolved tension.' },
   { key: 'institutional_trajectory', desc: 'Moderate-to-high consolidation, low covenantal integrity. The text is moving toward institutional normativity without significant counter-pressure.' },
-  { key: 'conceptual_recomposition', desc: 'High conceptual innovation, low consolidation. Semantic transformation is driven by theological reworking rather than structural development.' },
-  { key: 'dialectical_innovation',   desc: 'High conceptual innovation with strong covenantal integrity. The text innovates in ways that preserve or amplify the founding community\'s distinctive character.' },
-  { key: 'moderate_synthesis',       desc: 'Default category. Neither strongly consolidating nor strongly integrity-preserving; moderate conceptual innovation across several registers.' },
+  { key: 'conceptual_recomposition', desc: 'High conceptual departure, low consolidation. Semantic transformation is driven by theological reworking rather than structural development.' },
+  { key: 'dialectical_innovation',   desc: 'High conceptual departure with strong covenantal integrity. The text recomposes inherited categories in ways that preserve or amplify the founding movement\'s material and social vision.' },
+  { key: 'moderate_synthesis',       desc: 'Default category. Neither strongly consolidating nor strongly integrity-preserving; moderate departure across several registers.' },
 ]
 
 const COLS = [
-  { key: 'final_innovation_index',      label: 'Index',      numeric: true  },
+  { key: 'final_innovation_index',      label: 'Continuity', numeric: true  },
   { key: 'profile_label',               label: 'Profile',    numeric: false },
   { key: 'dominant_innovation_mode',    label: 'Mode',       numeric: false },
   { key: 'capture_pressure',            label: 'Consolidation', numeric: true  },
   { key: 'resistance_residue',          label: 'Cov. Integrity', numeric: true  },
-  { key: 'conceptual_innovation_score', label: 'Conceptual', numeric: true  },
+  { key: 'conceptual_innovation_score', label: 'Departure',  numeric: true  },
 ]
 
 function fmt(v) {
@@ -49,7 +49,7 @@ function fmtLabel(s) {
 export default function Dashboard({ onSelect }) {
   const [view, setView]             = useState('scatter')   // 'scatter' | 'table'
   const [sortKey, setSortKey]       = useState('final_innovation_index')
-  const [sortDir, setSortDir]       = useState('desc')
+  const [sortDir, setSortDir]       = useState('asc')
   const [filterLabel, setFilterLabel] = useState(null)
   const [filterMode, setFilterMode]   = useState(null)
 
@@ -80,8 +80,8 @@ export default function Dashboard({ onSelect }) {
       {/* ── Header ── */}
       <div className="dashboard-header">
         <div>
-          <h1>New Testament Innovation Index</h1>
-          <p>Semantic drift from the LXX/MT tradition across 27 NT books — plotted by institutional tension.</p>
+          <h1>New Testament Continuity Index</h1>
+          <p>Departure from the LXX/MT covenantal tradition across 27 NT books — plotted by institutional tension.</p>
         </div>
         <div className="view-toggle">
           <button
@@ -175,10 +175,10 @@ export default function Dashboard({ onSelect }) {
                         <div className="score-bar-track">
                           <div
                             className="score-bar-fill"
-                            style={{ width: `${Math.min(100, parseFloat(book.final_innovation_index))}%` }}
+                            style={{ width: `${Math.min(100, 100 - parseFloat(book.final_innovation_index))}%` }}
                           />
                         </div>
-                        <span className="score">{fmt(book.final_innovation_index)}</span>
+                        <span className="score">{fmt(100 - parseFloat(book.final_innovation_index))}</span>
                       </div>
                     </td>
                     <td>

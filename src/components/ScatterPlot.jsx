@@ -279,7 +279,7 @@ export default function ScatterPlot({ data, onSelect }) {
                   {bookName(b.book_id)}
                 </text>
                 <text x={tx+10} y={ty+34} fontSize="10" fill="#7c8ba1">
-                  Index: {parseFloat(b.final_innovation_index).toFixed(1)}
+                  Continuity: {(100 - parseFloat(b.final_innovation_index)).toFixed(1)}
                 </text>
                 <text x={tx+10} y={ty+48} fontSize="10" fill="#e05c5c">
                   Consolidation: {parseFloat(b.capture_pressure).toFixed(1)}
@@ -297,7 +297,7 @@ export default function ScatterPlot({ data, onSelect }) {
       </svg>
 
       <p className="scatter-note">
-        Each dot is one NT book. X axis: degree of institutional consolidation (hierarchy-building, orthodoxy production, eschatological deferral). Y axis: covenantal integrity (keeper obligation, non-hierarchical vision, Israel continuity, creation-groundedness). Color encodes innovation profile tier. Click any dot to open the book detail.
+        Each dot is one NT book. X axis: degree of institutional consolidation (hierarchy-building, orthodoxy production, eschatological deferral). Y axis: covenantal integrity (keeper obligation, non-hierarchical vision, Israel continuity, creation-groundedness). Color encodes continuity profile tier — green indicates high continuity with the LXX/MT tradition, red marks the furthest departures. Click any dot to open the book detail.
       </p>
     </div>
   )

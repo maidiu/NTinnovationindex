@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { bookName } from '../bookNames.js'
 
-// Scores that go in the "innovation signals" panel
+// Scores that go in the "departure signals" panel
 const INNOVATION_SCORES = [
-  { key: 'conceptual_innovation_score',        label: 'Conceptual Innovation',     color: 'var(--accent2)', max: 100 },
+  { key: 'conceptual_innovation_score',        label: 'Conceptual Departure',      color: 'var(--accent2)', max: 100 },
   { key: 'semantic_refunctionalization_score', label: 'Semantic Refunctionalization', color: 'var(--gold)', max: 100 },
-  { key: 'collocational_innovation_score',     label: 'Collocational Innovation',  color: 'var(--gold)', max: 100 },
+  { key: 'collocational_innovation_score',     label: 'Collocational Departure',   color: 'var(--gold)', max: 100 },
   { key: 'extra_lxx_dependence_score',         label: 'Extra-LXX Dependence',      color: 'var(--accent)', max: 100 },
 ]
 
@@ -104,7 +104,7 @@ function RadarChart({ radarData }) {
   const cx = 230, cy = 210, r = 128
   const levels = 3
 
-  function polar(i, val, maxVal = 3) {
+  function polar(i, val, maxVal = 100) {
     const angle = (Math.PI * 2 * i) / n - Math.PI / 2
     const radius = (val / maxVal) * r
     return {
@@ -123,17 +123,17 @@ function RadarChart({ radarData }) {
   })
 
   const spokes = axes.map((ax, i) => {
-    const end = polar(i, 3)
+    const end = polar(i, 100)
     return <line key={i} x1={cx} y1={cy} x2={end.x} y2={end.y} stroke="#252a35" strokeWidth="1" />
   })
 
   const pts = axes.map((ax, i) => {
-    const p = polar(i, ax.value_normalized)
+    const p = polar(i, ax.value_raw)
     return `${p.x},${p.y}`
   }).join(' ')
 
   const labels = axes.map((ax, i) => {
-    const p = polar(i, 3.72)
+    const p = polar(i, 124)
     // Shorten long axis names to fit
     const name = ax.axis
       .replace(/_score$/, '')
@@ -162,7 +162,7 @@ function RadarChart({ radarData }) {
   })
 
   const dots = axes.map((ax, i) => {
-    const p = polar(i, ax.value_normalized)
+    const p = polar(i, ax.value_raw)
     return <circle key={i} cx={p.x} cy={p.y} r="3.5" fill="var(--accent)" />
   })
 
@@ -191,6 +191,7 @@ export default function BookDetail({ book, onBack }) {
   if (!book) return null
 
   const score = parseFloat(book.final_innovation_index)
+  const continuity = 100 - score
   const scoreColor = score >= 57 ? 'var(--red)'
     : score >= 50 ? 'var(--accent2)'
     : score >= 44 ? 'var(--gold)'
@@ -206,9 +207,9 @@ export default function BookDetail({ book, onBack }) {
         <div className="detail-title">
           <h2>{bookName(book.book_id)}</h2>
           <div className="score-big" style={{ color: scoreColor }}>
-            {isNaN(score) ? '—' : score.toFixed(1)}
+            {isNaN(score) ? '—' : continuity.toFixed(1)}
           </div>
-          <div className="score-label">Innovation Index (0–100)</div>
+          <div className="score-label">Continuity Index (0–100)</div>
         </div>
         <div className="detail-badges">
           <span className={`badge badge-${book.profile_label}`}>
@@ -253,7 +254,7 @@ export default function BookDetail({ book, onBack }) {
               }
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.71rem', marginTop: '0.5rem' }}>
-              Manual axes 0–3 · Computed axes rescaled 0–3 for display
+              All axes 0–100 · grey = concept axes · blue = pipeline axes
             </p>
           </CollapsibleSection>
         </div>
@@ -261,7 +262,7 @@ export default function BookDetail({ book, onBack }) {
         {/* Right: score panels */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
-          <CollapsibleSection title="Innovation Signals">
+          <CollapsibleSection title="Departure Signals">
             {INNOVATION_SCORES.map(({ key, label, color, max }) => (
               <ScoreRow key={key} label={label} value={book[key]} max={max} color={color} />
             ))}
