@@ -5,7 +5,7 @@ import { bookName } from '../bookNames.js'
 const INNOVATION_SCORES = [
   { key: 'conceptual_innovation_score',        label: 'Conceptual Departure',      color: 'var(--accent2)', max: 100 },
   { key: 'semantic_refunctionalization_score', label: 'Semantic Refunctionalization', color: 'var(--gold)', max: 100 },
-  { key: 'collocational_innovation_score',     label: 'Collocational Departure',   color: 'var(--gold)', max: 100 },
+  { key: 'collocational_innovation_score',     label: 'Collocational Continuity',  color: 'var(--gold)', max: 100 },
   { key: 'extra_lxx_dependence_score',         label: 'Extra-LXX Dependence',      color: 'var(--accent)', max: 100 },
 ]
 
@@ -140,7 +140,7 @@ function RadarChart({ radarData }) {
       .replace(/_/g, ' ')
       .replace('semantic refunctionalization', 'refunctionalization')
       .replace('christological recomposition', 'christological recomp.')
-      .replace('collocational innovation', 'collocational innov.')
+      .replace('collocational innovation', 'colloc. continuity')
       .replace('domination accommodation', 'dom. accommodation')
     const isComputed = ax.layer === 'computed'
     // Determine text anchor based on position

@@ -14,10 +14,12 @@
   --border:    #1c1c2e;
   --border-2:  #252538;
 
-  /* Text — brighter, closer to white for readability */
-  --text:      #f0f0fa;
-  --text-2:    #b8b8d8;
-  --text-3:    #9090b8;
+  /* Text — bright, near-white for readability */
+  --text:      #f8f8fc;
+  --text-2:    #d8d8f0;
+  --text-3:    #b8b8d8;
+  --muted:     #c8c8e0;
+  --muted-2:   #d0d0e8;
 
   /* Accent — indigo */
   --accent:    #7b7df0;
