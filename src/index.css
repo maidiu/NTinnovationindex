@@ -14,10 +14,10 @@
   --border:    #1c1c2e;
   --border-2:  #252538;
 
-  /* Text */
-  --text:      #ddddf2;
-  --text-2:    #7878a0;
-  --text-3:    #42425a;
+  /* Text — brighter, closer to white for readability */
+  --text:      #f0f0fa;
+  --text-2:    #b8b8d8;
+  --text-3:    #9090b8;
 
   /* Accent — indigo */
   --accent:    #7b7df0;
