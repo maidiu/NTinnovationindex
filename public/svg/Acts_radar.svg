@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="680" viewBox="0 0 600 680" font-family="Georgia, serif">
+<rect width="600" height="680" fill="#fafaf8"/>
+<polygon points="300.0,250.0 325.0,256.7 343.3,275.0 350.0,300.0 343.3,325.0 325.0,343.3 300.0,350.0 275.0,343.3 256.7,325.0 250.0,300.0 256.7,275.0 275.0,256.7" fill="none" stroke="#cccccc" stroke-width="0.8"/>
+<text x="303.0" y="246.0" font-size="9" fill="#999">25%</text>
+<polygon points="300.0,200.0 350.0,213.4 386.6,250.0 400.0,300.0 386.6,350.0 350.0,386.6 300.0,400.0 250.0,386.6 213.4,350.0 200.0,300.0 213.4,250.0 250.0,213.4" fill="none" stroke="#cccccc" stroke-width="0.8"/>
+<text x="303.0" y="196.0" font-size="9" fill="#999">50%</text>
+<polygon points="300.0,150.0 375.0,170.1 429.9,225.0 450.0,300.0 429.9,375.0 375.0,429.9 300.0,450.0 225.0,429.9 170.1,375.0 150.0,300.0 170.1,225.0 225.0,170.1" fill="none" stroke="#cccccc" stroke-width="0.8"/>
+<text x="303.0" y="146.0" font-size="9" fill="#999">75%</text>
+<polygon points="300.0,100.0 400.0,126.8 473.2,200.0 500.0,300.0 473.2,400.0 400.0,473.2 300.0,500.0 200.0,473.2 126.8,400.0 100.0,300.0 126.8,200.0 200.0,126.8" fill="none" stroke="#cccccc" stroke-width="1.5"/>
+<text x="303.0" y="96.0" font-size="9" fill="#999">100%</text>
+<line x1="300.0" y1="300.0" x2="300.0" y2="100.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="400.0" y2="126.8" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="473.2" y2="200.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="500.0" y2="300.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="473.2" y2="400.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="400.0" y2="473.2" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="300.0" y2="500.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="200.0" y2="473.2" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="126.8" y2="400.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="100.0" y2="300.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="126.8" y2="200.0" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="300.0" y1="300.0" x2="200.0" y2="126.8" stroke="#cccccc" stroke-width="0.8"/>
+<polygon points="300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0 300.0,300.0" fill="#4a6fa5" fill-opacity="0.25" stroke="#4a6fa5" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#2d7d46" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#2d7d46" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#2d7d46" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#2d7d46" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#b54c4c" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#b54c4c" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#b54c4c" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#b54c4c" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#b54c4c" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#5574a8" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#5574a8" stroke="white" stroke-width="1.5"/>
+<circle cx="300.0" cy="300.0" r="5" fill="#5574a8" stroke="white" stroke-width="1.5"/>
+<text x="300.0" y="64.0" text-anchor="middle" font-size="10" fill="#2d7d46" font-weight="bold"><tspan x="300.0" dy="-4">Keeper</tspan><tspan x="300.0" dy="1em">Obligation</tspan></text>
+<text x="418.0" y="95.6" text-anchor="start" font-size="10" fill="#2d7d46" font-weight="bold"><tspan x="418.0" dy="-4">Kingdom</tspan><tspan x="418.0" dy="1em">Non-hierarchy</tspan></text>
+<text x="504.4" y="182.0" text-anchor="start" font-size="10" fill="#2d7d46" font-weight="bold"><tspan x="504.4" dy="-4">Israel</tspan><tspan x="504.4" dy="1em">Continuity</tspan></text>
+<text x="536.0" y="300.0" text-anchor="start" font-size="10" fill="#2d7d46" font-weight="bold"><tspan x="536.0" dy="-4">Creation</tspan><tspan x="536.0" dy="1em">Ground</tspan></text>
+<text x="504.4" y="418.0" text-anchor="start" font-size="10" fill="#b54c4c" font-weight="bold"><tspan x="504.4" dy="-4">Christological</tspan><tspan x="504.4" dy="1em">Recomposition</tspan></text>
+<text x="418.0" y="504.4" text-anchor="start" font-size="10" fill="#b54c4c" font-weight="bold"><tspan x="418.0" dy="-4">Eschatological</tspan><tspan x="418.0" dy="1em">Deferral</tspan></text>
+<text x="300.0" y="536.0" text-anchor="middle" font-size="10" fill="#b54c4c" font-weight="bold"><tspan x="300.0" dy="-4">Orthodoxy</tspan><tspan x="300.0" dy="1em">Production</tspan></text>
+<text x="182.0" y="504.4" text-anchor="end" font-size="10" fill="#b54c4c" font-weight="bold"><tspan x="182.0" dy="-4">Domination</tspan><tspan x="182.0" dy="1em">Accommodation</tspan></text>
+<text x="95.6" y="418.0" text-anchor="end" font-size="10" fill="#b54c4c" font-weight="bold"><tspan x="95.6" dy="-4">Hierarchy</tspan><tspan x="95.6" dy="1em">Building</tspan></text>
+<text x="64.0" y="300.0" text-anchor="end" font-size="10" fill="#5574a8" font-weight="bold"><tspan x="64.0" dy="-4">Semantic</tspan><tspan x="64.0" dy="1em">Shift</tspan></text>
+<text x="95.6" y="182.0" text-anchor="end" font-size="10" fill="#5574a8" font-weight="bold"><tspan x="95.6" dy="-4">Collocational</tspan><tspan x="95.6" dy="1em">Innovation</tspan></text>
+<text x="182.0" y="95.6" text-anchor="end" font-size="10" fill="#5574a8" font-weight="bold"><tspan x="182.0" dy="-4">Extra-LXX</tspan><tspan x="182.0" dy="1em">Dependence</tspan></text>
+<text x="300" y="28" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">Acts</text>
+<text x="300" y="48" text-anchor="middle" font-size="12" fill="#555">Innovation Index: 36.2</text>
+<rect x="20" y="580" width="560" height="90" fill="#f0f0f0" rx="6"/>
+<text x="300" y="600" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">Profile: <tspan fill="#4a6fa5">constrained_departure</tspan></text>
+<text x="300" y="620" text-anchor="middle" font-size="11" fill="#333">Mode: <tspan fill="#2d7d46">moderate_synthesis</tspan></text>
+<circle cx="55" cy="642" r="5" fill="#2d7d46"/>
+<text x="64" y="646" font-size="9" fill="#2d7d46">Resistance axes</text>
+<circle cx="195" cy="642" r="5" fill="#b54c4c"/>
+<text x="204" y="646" font-size="9" fill="#b54c4c">Capture axes</text>
+<circle cx="335" cy="642" r="5" fill="#5574a8"/>
+<text x="344" y="646" font-size="9" fill="#5574a8">Computed axes</text>
+</svg>

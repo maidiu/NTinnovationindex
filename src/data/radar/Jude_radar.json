@@ -1,0 +1,99 @@
+{
+  "book_id": "Jude",
+  "final_innovation_index": 41.59,
+  "profile_label": "selective_recomposition",
+  "capture_pressure": 26.0,
+  "resistance_residue": 15.75,
+  "dominant_contradiction": "israel_continuity (38) vs hierarchy_building (5)",
+  "radar_axes": [
+    {
+      "axis": "keeper_obligation",
+      "value_raw": 12.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "kingdom_nonhierarchy",
+      "value_raw": 8.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "hierarchy_building",
+      "value_raw": 5.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "domination_accommodation",
+      "value_raw": 5.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "israel_continuity",
+      "value_raw": 38.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "christological_recomposition",
+      "value_raw": 22.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "orthodoxy_production",
+      "value_raw": 82.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "eschatological_deferral",
+      "value_raw": 12.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "creation_ground",
+      "value_raw": 5.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "semantic_refunctionalization_score",
+      "value_raw": 16.2996,
+      "value_normalized": 0.489,
+      "raw_scale": 100.0,
+      "layer": "computed"
+    },
+    {
+      "axis": "collocational_innovation_score",
+      "value_raw": 78.4314,
+      "value_normalized": 2.353,
+      "raw_scale": 100.0,
+      "layer": "computed"
+    },
+    {
+      "axis": "extra_lxx_dependence_score",
+      "value_raw": 11.8943,
+      "value_normalized": 0.357,
+      "raw_scale": 100.0,
+      "layer": "computed"
+    }
+  ],
+  "meta": {
+    "manual_axes_scale": "0–3 (0 = absent/scored-zero, 3 = dominant)",
+    "computed_axes_normalized": "raw 0–100 rescaled to 0–3 for display",
+    "data_sources": "data/raw/concept_scores.csv (manual); pipeline aggregates (computed)"
+  }
+}

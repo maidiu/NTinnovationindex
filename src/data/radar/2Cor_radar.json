@@ -1,0 +1,99 @@
+{
+  "book_id": "2Cor",
+  "final_innovation_index": 45.88,
+  "profile_label": "composite_recomposition",
+  "capture_pressure": 17.0,
+  "resistance_residue": 45.5,
+  "dominant_contradiction": "christological_recomposition (80) vs domination_accommodation (8)",
+  "radar_axes": [
+    {
+      "axis": "keeper_obligation",
+      "value_raw": 72.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "kingdom_nonhierarchy",
+      "value_raw": 40.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "hierarchy_building",
+      "value_raw": 15.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "domination_accommodation",
+      "value_raw": 8.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "israel_continuity",
+      "value_raw": 32.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "christological_recomposition",
+      "value_raw": 80.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "orthodoxy_production",
+      "value_raw": 20.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "eschatological_deferral",
+      "value_raw": 25.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "creation_ground",
+      "value_raw": 38.0,
+      "value_normalized": 3.0,
+      "raw_scale": 3.0,
+      "layer": "manual"
+    },
+    {
+      "axis": "semantic_refunctionalization_score",
+      "value_raw": 13.7427,
+      "value_normalized": 0.412,
+      "raw_scale": 100.0,
+      "layer": "computed"
+    },
+    {
+      "axis": "collocational_innovation_score",
+      "value_raw": 81.4876,
+      "value_normalized": 2.445,
+      "raw_scale": 100.0,
+      "layer": "computed"
+    },
+    {
+      "axis": "extra_lxx_dependence_score",
+      "value_raw": 16.5414,
+      "value_normalized": 0.496,
+      "raw_scale": 100.0,
+      "layer": "computed"
+    }
+  ],
+  "meta": {
+    "manual_axes_scale": "0–3 (0 = absent/scored-zero, 3 = dominant)",
+    "computed_axes_normalized": "raw 0–100 rescaled to 0–3 for display",
+    "data_sources": "data/raw/concept_scores.csv (manual); pipeline aggregates (computed)"
+  }
+}
