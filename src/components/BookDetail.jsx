@@ -3,16 +3,16 @@ import { bookName } from '../bookNames.js'
 
 // Scores that go in the "departure signals" panel
 const INNOVATION_SCORES = [
-  { key: 'conceptual_innovation_score',        label: 'Conceptual Departure',      color: 'var(--accent2)', max: 100 },
-  { key: 'semantic_refunctionalization_score', label: 'Semantic Refunctionalization', color: 'var(--gold)', max: 100 },
-  { key: 'collocational_innovation_score',     label: 'Collocational Continuity',  color: 'var(--gold)', max: 100 },
-  { key: 'extra_lxx_dependence_score',         label: 'Extra-LXX Dependence',      color: 'var(--accent)', max: 100 },
+  { key: 'conceptual_innovation_score',        label: 'Conceptual Departure',        color: 'var(--accent2)', max: 100 },
+  { key: 'semantic_refunctionalization_score', label: 'Semantic Refunctionalization', color: 'var(--gold)',    max: 100 },
+  { key: 'extra_lxx_dependence_score',         label: 'Extra-LXX Dependence',        color: 'var(--accent)',  max: 100 },
 ]
 
 // Scores that go in the "tradition signals" panel
 const TRADITION_SCORES = [
-  { key: 'lxx_lexical_continuity_score',  label: 'LXX Lexical Continuity', color: 'var(--green)', max: 100 },
-  { key: 'mt_anchor_score',               label: 'MT Anchor',               color: 'var(--green)', max: 100 },
+  { key: 'lxx_lexical_continuity_score',  label: 'LXX Lexical Continuity',   color: 'var(--green)', max: 100 },
+  { key: 'mt_anchor_score',               label: 'MT Anchor',                 color: 'var(--green)', max: 100 },
+  { key: 'collocational_innovation_score', label: 'Collocational Continuity', color: 'var(--green)', max: 100, invert: true },
 ]
 
 // Scores that go in the "institutional signals" panel
@@ -29,14 +29,16 @@ const MANUAL_SCORES = [
   { key: 'domination_accommodation',      label: 'Domination Accommodation' },
   { key: 'israel_continuity',             label: 'Israel Continuity' },
   { key: 'christological_recomposition',  label: 'Christological Recomposition' },
-  { key: 'orthodoxy_production',          label: 'Orthodoxy Production' },
+  { key: 'orthodoxy_production',          label: 'Praxis over Doctrine' },
   { key: 'eschatological_deferral',       label: 'Eschatological Deferral' },
   { key: 'creation_ground',              label: 'Creation Ground' },
 ]
 
-function ScoreRow({ label, value, max = 100, color = 'var(--accent)' }) {
-  const pct = Math.min(100, Math.max(0, (parseFloat(value) / max) * 100))
-  const display = isNaN(parseFloat(value)) ? '—' : parseFloat(value).toFixed(1)
+function ScoreRow({ label, value, max = 100, color = 'var(--accent)', invert = false }) {
+  const raw = parseFloat(value)
+  const v = invert ? max - raw : raw
+  const pct = Math.min(100, Math.max(0, (v / max) * 100))
+  const display = isNaN(raw) ? '—' : v.toFixed(1)
   return (
     <div className="score-row">
       <span className="score-row-label" title={label}>{label}</span>
@@ -95,14 +97,48 @@ function CollapsibleSection({ title, children, defaultOpen = true }) {
   )
 }
 
+// Axes to exclude from radar — measuring stylistic variation, not substantive covenantal orientation
+const EXCLUDE_AXES = new Set([
+  'collocational_innovation_score',
+])
+
+// Axes where high raw value = bad (capture/departure) — invert so outward = good
+const INVERT_AXES = new Set([
+  'hierarchy_building',
+  'domination_accommodation',
+  'orthodoxy_production',
+  'eschatological_deferral',
+  'semantic_refunctionalization_score',
+  'christological_recomposition',
+  'extra_lxx_dependence_score',
+])
+
+// Positive-framed display labels for every radar axis
+const AXIS_LABELS = {
+  keeper_obligation:                  'keeper obligation',
+  kingdom_nonhierarchy:               'kingdom non-hierarchy',
+  hierarchy_building:                 'horizontal polity',
+  domination_accommodation:           'domination resistance',
+  israel_continuity:                  'israel continuity',
+  christological_recomposition:       'christological continuity',
+  orthodoxy_production:               'praxis over doctrine',
+  eschatological_deferral:            'ethical immediacy',
+  creation_ground:                    'creation ground',
+  semantic_refunctionalization_score: 'semantic fidelity',
+  extra_lxx_dependence_score:         'lxx lexical draw',
+}
+
 // Inline SVG radar rendered from JSON axes
 function RadarChart({ radarData }) {
   if (!radarData?.radar_axes) return null
 
-  const axes = radarData.radar_axes
+  const axes = radarData.radar_axes.filter(ax => !EXCLUDE_AXES.has(ax.axis))
   const n = axes.length
   const cx = 230, cy = 210, r = 128
   const levels = 3
+
+  // For inverted axes, plot (100 - raw) so outward always means "more covenantally faithful"
+  const plotVal = (ax) => INVERT_AXES.has(ax.axis) ? 100 - ax.value_raw : ax.value_raw
 
   function polar(i, val, maxVal = 100) {
     const angle = (Math.PI * 2 * i) / n - Math.PI / 2
@@ -128,22 +164,14 @@ function RadarChart({ radarData }) {
   })
 
   const pts = axes.map((ax, i) => {
-    const p = polar(i, ax.value_raw)
+    const p = polar(i, plotVal(ax))
     return `${p.x},${p.y}`
   }).join(' ')
 
   const labels = axes.map((ax, i) => {
     const p = polar(i, 124)
-    // Shorten long axis names to fit
-    const name = ax.axis
-      .replace(/_score$/, '')
-      .replace(/_/g, ' ')
-      .replace('semantic refunctionalization', 'refunctionalization')
-      .replace('christological recomposition', 'christological recomp.')
-      .replace('collocational innovation', 'colloc. continuity')
-      .replace('domination accommodation', 'dom. accommodation')
+    const name = AXIS_LABELS[ax.axis] ?? ax.axis.replace(/_score$/, '').replace(/_/g, ' ')
     const isComputed = ax.layer === 'computed'
-    // Determine text anchor based on position
     const angle = (Math.PI * 2 * i) / n - Math.PI / 2
     const anchor = Math.cos(angle) < -0.1 ? 'end' : Math.cos(angle) > 0.1 ? 'start' : 'middle'
     return (
@@ -162,7 +190,7 @@ function RadarChart({ radarData }) {
   })
 
   const dots = axes.map((ax, i) => {
-    const p = polar(i, ax.value_raw)
+    const p = polar(i, plotVal(ax))
     return <circle key={i} cx={p.x} cy={p.y} r="3.5" fill="var(--accent)" />
   })
 
@@ -254,7 +282,7 @@ export default function BookDetail({ book, onBack }) {
               }
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.71rem', marginTop: '0.5rem' }}>
-              All axes 0–100 · grey = concept axes · blue = pipeline axes
+              All axes: outward = more covenantally faithful · grey = concept · blue = pipeline
             </p>
           </CollapsibleSection>
         </div>
@@ -269,8 +297,8 @@ export default function BookDetail({ book, onBack }) {
           </CollapsibleSection>
 
           <CollapsibleSection title="Tradition Signals">
-            {TRADITION_SCORES.map(({ key, label, color, max }) => (
-              <ScoreRow key={key} label={label} value={book[key]} max={max} color={color} />
+            {TRADITION_SCORES.map(({ key, label, color, max, invert }) => (
+              <ScoreRow key={key} label={label} value={book[key]} max={max} color={color} invert={!!invert} />
             ))}
           </CollapsibleSection>
 
